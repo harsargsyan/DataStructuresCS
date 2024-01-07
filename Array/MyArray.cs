@@ -1,4 +1,4 @@
-namespace Array
+namespace DataStructuresCS.Array
 {
     class MyArray<T>
     {
