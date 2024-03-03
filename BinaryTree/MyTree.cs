@@ -52,18 +52,6 @@ public class MyTree
         }
     }
 
-    // Inorder traversal of a binary tree 
-    static void Inorder(Node temp) 
-    { 
-        if (temp == null)
-        {
-            return;
-        }  
-        Inorder(temp.left); 
-        Console.Write(temp.data + " "); 
-        Inorder(temp.right); 
-    }
-
     // Function to delete deepest element in binary tree
     // Time complexity: O(n)
     static void DeleteDeepest(Node root, Node delNode) 
