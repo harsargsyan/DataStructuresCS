@@ -1,3 +1,5 @@
+namespace DataStructuresCS.BinaryTree;
+
 public class MyTree
 {
     private Node? root;
@@ -63,7 +65,7 @@ public class MyTree
             return;
         }
 
-        Queue<Node> q = new Queue<Node>();
+        var q = new Queue<Node>();
         q.Enqueue(root);
 
         Node? keyNode = null;
@@ -272,5 +274,29 @@ public class MyTree
             }
             Console.WriteLine();
         }
+    }
+    
+    /// <summary>
+    /// Searches for a value in the binary tree.
+    /// Time complexity: O(n), where n is the number of nodes in the tree.
+    /// </summary>
+    /// <param name="key">The value to search for</param>
+    /// <returns>True if the value is found, false otherwise</returns>
+    public bool Search(int key)
+    {
+        return Search(root, key);
+    }
+    
+    /// <summary>
+    /// Recursive helper method to search for a value in the binary tree.
+    /// </summary>
+    /// <param name="node">Current node being examined</param>
+    /// <param name="key">The value to search for</param>
+    /// <returns>True if the value is found, false otherwise</returns>
+    private bool Search(Node? node, int key)
+    {
+        if (node == null) return false;
+        if (node.data == key) return true;
+        return Search(node.left, key) || Search(node.right, key);
     }
 }
